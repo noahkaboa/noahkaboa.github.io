@@ -27,11 +27,14 @@ button{
 button:hover{
     background-color: yellow;
 }
-#github{
-    margin-left: 80vw;
-}
 #github:hover{
     filter: invert(0.3);
+}
+#github {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: block;
 }
 #resume{
     font-size: max(30px, 0.75vw);
