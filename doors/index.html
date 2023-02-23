@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="idor.js"></script>
+    <script defer src="idor.js"></script>
     <link rel="stylesheet" href="doors.css">
-    <title>Document</title>
+    <title>iDoors</title>
 </head>
 <body>
+    <header id="doorHeader">Doors</header>
+    
     <h1>My favorite doors</h1>
     <h2>I sure hope noone sees my secret favorite door!</h2>
+    
     <div class="dropdown">
         <button class="dropbtn">Doors</button>
         <div class="dropdown-content">
-            <a href="#">Oak</a>
-            <a href="#">Spruce</a>
-            <a href="#">Birch</a>
-            <a href="#">Jungle</a>
-            <a href="#">Acacia</a>
-            <a href="#">Dark Oak</a>
+            <a href="?door=oak">Oak</a>
+            <a href="?door=spruce">Spruce</a>
+            <a href="?door=birch">Birch</a>
+            <a href="?door=jungle">Jungle</a>
+            <a href="?door=acacia">Acacia</a>
+            <a href="?door=dark">Dark Oak</a>
+            <a href="javascript:alert('This door is top secret!')">EyeRon</a>
         </div>
     </div>
 </body>
