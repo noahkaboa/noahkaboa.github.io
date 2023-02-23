@@ -33,3 +33,7 @@ body {
 .dropdown-content a:hover {background-color: #ddd;}
 .dropdown:hover .dropdown-content{display: block;}
 .dropdown:hover .dropbtn {background-color: #8a6d29;}
+
+img {
+    margin: 1em;
+}
