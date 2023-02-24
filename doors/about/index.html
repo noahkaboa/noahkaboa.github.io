@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="idor.js"></script>
+    <link rel="stylesheet" href="/doors/doors.css">
+    <title>About iDoors</title>
+</head>
+<body>
+    <div class="banner">
+        <button id="home" class="btn" onclick="window.location.href='/doors'">Home</button>
+        <button id="about" class="btn" onclick="window.location.href='/doors/about'">About</button>
+        <div class="dropdown">
+            <button class="dropbtn">Doors</button>
+            <div class="dropdown-content">
+                <a href="/doors/?door=oak">Oak</a>
+                <a href="/doors/?door=spruce">Spruce</a>
+                <a href="/doors/?door=birch">Birch</a>
+                <a href="/doors/?door=jungle">Jungle</a>
+                <a href="/doors/?door=acacia">Acacia</a>
+                <a href="/doors/?door=dark">Dark Oak</a>
+                <a href="javascript:alert('This door is top secret!')">EyeRon</a>
+            </div>
+        </div>
+    </div>
+    <h1>
+        All about My Doors!
+    </h1>
+    <p>This site is to show off some cool doors. But beware! My super secret door, the EyeRon door, won't open to just anybody!</p>
+    <p id="white_text">This is an easter egg. If you're reading this, you're probably not on the right track!</p>
+    <p>Also, all (most of) the door images are from <a href="https://minecraft.fandom.com/wiki">https://minecraft.fandom.com/wiki</a> Google searches</p>
+    
+    <p id="flagTxt"></p>
+    <img id="doorImg" onerror="javascript:console.log('This image link is broken')">
+</body>

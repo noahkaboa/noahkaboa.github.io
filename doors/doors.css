@@ -13,14 +13,19 @@ body {
     border: none;
 }
 .dropdown {
-    position: relative;
+    position: absolute;
     display: inline-block;
+    top: 0;
+    right: 0;
+    margin-top: 1em;
+    margin-right: 5em;
+    height: 3em;
 }
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 160px;
+    min-width: 120px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -38,13 +43,52 @@ img {
     margin: 1em;
 }
 
-.btn {
-background-color: orange; /* orange background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 12px 16px; /* Some padding */
-  font-size: 16px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
-  float: left;
+#home {
+    background-color: orange; /* orange background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    float: left;
+    position: absolute;
+    top: 0;
+    right:0;
+    margin-top: 1em;
+    margin-right: 15em;
+    height: 3em;
 }
-.btn:hover {background-color: darkgoldenrod;}
+#about {
+    background-color: orange; /* orange background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    float: left;
+    position: absolute;
+    top: 0;
+    right:0;
+    margin-top: 1em;
+    margin-right: 10em;
+    height: 3em;
+}
+#about:hover{
+    background-color: darkgoldenrod;
+}
+#home:hover{    
+    background-color: darkgoldenrod;
+}
+.btn:hover {
+    background-color: darkgoldenrod;
+}
+
+.banner {
+    height: 100%;
+    width: 200%;
+    background-color: blanchedalmond;
+    display: flex;
+}
+#white_text {
+    color: white;
+}
