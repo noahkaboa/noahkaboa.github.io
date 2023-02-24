@@ -6,7 +6,7 @@ body {
 
 /* Ripped off W3schools */
 .dropbtn {
-    background-color: #a88532;
+    background-color: orange;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -32,8 +32,19 @@ body {
 }
 .dropdown-content a:hover {background-color: #ddd;}
 .dropdown:hover .dropdown-content{display: block;}
-.dropdown:hover .dropbtn {background-color: #8a6d29;}
+.dropdown:hover .dropbtn {background-color: darkgoldenrod;}
 
 img {
     margin: 1em;
 }
+
+.btn {
+background-color: orange; /* orange background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  float: left;
+}
+.btn:hover {background-color: darkgoldenrod;}
