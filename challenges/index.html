@@ -7,41 +7,65 @@
     <title>CTF Challenges</title>
     <script defer src="challenges.js"></script>
     <link rel="stylesheet" href="challenges.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Fira+Code">
 </head>
 <body>
     <!-- <template> -->
         <!--Eyedoor-->
         <div class="closed_chal">
-            <button class="modal-button" href="#EyeDoor">EyeDoor</button>
+            <button class="modal-button" href="#eye_door">eye_door</button>
         </div>
-        <div id="EyeDoor" class="modal">
+        <div id="eye_door" class="modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="close">&times</span>
-                    <h1 id="chal_name">EyeDoor</h1>
+                    <span class="close"><b>&times</b></span>
+                    <h1 class="chal_name">eye_door</h1>
                 </div>
                 <div class="modal-body">
-                    <p id="chal_description">
-                        I've created this website to showcase some of my favorite doors, but I've locked away my most favorite - and top secret - EyeDoor! Can you hack in and steal the flag(hidden with the door)?
+                    <p class="chal_description ">
+                        I've created this website to showcase some of my favorite doors, but I've locked away my most favorite - and top secret - EyeDoor! Can you hack in and steal the flag(hidden with the door)?<br>Check it out at <a href="https://noahkaboa.github.io/doors/" target="_blank">https://noahkaboa.github.io/doors/</a>
                     </p>
+                </div>
+                <div class="flag-sub">
+                    <input type="text" placeholder="flag{...}" class="flag">
+                    <button class="flag-btn" type="submit" id="eyedoor">Enter Flag</button>
+                </div>
+                <div class="hints">
+                    <label for="eyedoor-hint-1-btn">Hints</label>
+                    <button class="hint-button" href="#eyedoor-hint-1">1</button>
+                    <button class="hint-button" href="#eyedoor-hint-2">2</button>
+                    <p class="hint" id="eyedoor-hint-1">The developers have been communicating with <a href="https://noahkaboa.github.io/doors/notes" target="_blank">https://noahkaboa.github.io/doors/notes</a>, are there any clues there?</p>
+                    <p class="hint" id="eyedoor-hint-2"><a href="https://en.wikipedia.org/wiki/Insecure_direct_object_reference">https://en.wikipedia.org/wiki/Insecure_direct_object_reference</a><br><a href="https://portswigger.net/web-security/access-control/idor">https://portswigger.net/web-security/access-control/idor</a><br><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html</a><br><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwid04j96679AhWvGlkFHVfaAmoQtwJ6BAgLEAI&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DQVZBl8yxVX0&usg=AOvVaw3lxir4qHvgdbbEky_lAsAX">Parameter Pollution</a></p>
                 </div>
             </div>
         </div>
     <!-- </template> -->
-    <!--pseudo random-->
+    <!--pseudo_random-->
     <div class="closed_chal">
         <button class="modal-button" href="#pseudo_random">pseudo_random</button>
     </div>
     <div id="pseudo_random" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <span class="close">&times</span>
-                <h1 id="chal_name">pseudo_random</h1>
+                <span class="close"><b>&times</b></span>
+                <h1 class="chal_name">pseudo_random</h1>
             </div>
             <div class="modal-body">
-                <p id="chal_description">
-                    Recently, I've been learning about the random module in python. To test it out, I've created this program to securely encrypt the flag, so that nobody can see it! Best of luck!
+                <p class="chal_description ">
+                    I've just learned about the random module in python. I can't wait to encrypt all my passwords using this!
                 </p>
+            </div>
+            <div class="flag-sub">
+                <input type="text" placeholder="flag{...}" class="flag">
+                <button class="flag-btn" type="submit" id="pseudo_random">Enter Flag</button>
+            </div>
+            <div class="hints">
+                <!-- <label for="eyedoor-hint-1-btn">Hints</label>
+                <button class="hint-button" href="#eyedoor-hint-1">1</button>
+                <button class="hint-button" href="#eyedoor-hint-2">2</button>
+                <p class="hint" id="eyedoor-hint-1">The developers have been communicating with <a href="https://noahkaboa.github.io/doors/notes" target="_blank">https://noahkaboa.github.io/doors/notes</a>, are there any clues there?</p>
+                <p class="hint" id="eyedoor-hint-2"><a href="https://en.wikipedia.org/wiki/Insecure_direct_object_reference">https://en.wikipedia.org/wiki/Insecure_direct_object_reference</a><br><a href="https://portswigger.net/web-security/access-control/idor">https://portswigger.net/web-security/access-control/idor</a><br><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">https://cheatsheetseries.owasp.org/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.html</a><br><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwid04j96679AhWvGlkFHVfaAmoQtwJ6BAgLEAI&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DQVZBl8yxVX0&usg=AOvVaw3lxir4qHvgdbbEky_lAsAX">Parameter Pollution</a></p> -->
             </div>
         </div>
     </div>

@@ -1,5 +1,12 @@
+/* @font-face { font-family: Fira Code; src: url('Delicious-Roman.otf'); }  */
+
 html {
-    background-color: #e9f2f2;
+    background-color: #aaaebf;
+}
+
+body {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .modal {
@@ -13,7 +20,7 @@ html {
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: #dee0e0;
+    background-color: #aaaebfbb;
 }
 .modal-content {
     position: relative;
@@ -21,7 +28,8 @@ html {
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 86%;
+    height: 40%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -41,42 +49,54 @@ html {
 }
 
 .close {
-    color: #aaa;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
+    /* font-size: 28px; */
+    font-weight: bolder;
+    color: #F06449;
+    font-size: 3em;
+}
+
+.close:hover {
+    color: #fd927d;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.chal_name {
+    font-family: 'Fira Code', serif;
+    font-weight: light;
 }
 
 .modal-header {
     padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+    background-color: #dadad9;
+    color: #07070a;
+    /* font-family: 'Fira Code', serif;
+    font-weight: light; */
+    /* font-size: 2vw; */
 }
 
 .modal-body {padding: 2px 16px;}
 
 .modal-footer {
     padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    background-color: #dadad9;
+    color: #07070a;
 }
 
 .modal-button {
     padding: 2px;
+    margin: 10px;
     width: 15vw;
     height: 15vw;
     border-color: #b5c4c4;
     border-radius: 8px;
-    background-color: white;
+    background-color: #EDE6E3;
     box-shadow: none;
     display: inline-block;
+    /* font-weight: bolder; */
+    font-family: 'Fira Code', serif;
+    font-size: 1.5vw;
 }
 .modal-button:hover,
 .modal-button:focus {
@@ -84,3 +104,55 @@ html {
     text-decoration: none;
     cursor: pointer;
 }
+
+.flag-sub {
+    width: 50vp;
+    margin: 0 auto;
+    padding: 10px;
+    position: relative;
+}
+
+a,
+a:visited {
+    /* font-weight: bold; */
+    color: #192A51;
+}
+
+.flag-btn {
+    background-color: #00635D;
+    color: #EDE6E3;
+    border-radius: 8px;
+    width: 10vw;
+    height: 4vw;
+}
+
+.flag-btn:hover {
+    background-color: #00A398;
+}
+.flag-sub {
+    width: 40%;
+    float: left;
+    padding: 20px;
+}
+
+.hint-button {
+    background-color: #00635D;
+    color: #EDE6E3;
+    border-radius: 8px;
+    width: 3vw;
+    height: 3vw;
+}
+
+.hint {
+    display: none;
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 100%;
+    font-weight: lighter;
+    margin: 0 auto;
+    /* padding: 10px; */
+}
+.hints {
+    border: #6D676E;
+}
+
