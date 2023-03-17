@@ -23,7 +23,7 @@ let modals = document.querySelectorAll(".modal");
 let spans = document.getElementsByClassName("close");
 let flag_btns = document.querySelectorAll("button.flag-btn");
 let hint_btns = document.querySelectorAll("button.hint-button");
-let hints = document.querySelectorAll("hint");
+let hints = document.querySelectorAll(".hint");
 
 for (let i = 0; i < btn.length; i++){
     btn[i].addEventListener('click', (e) => {
@@ -53,9 +53,9 @@ for (const btn of flag_btns){
         if (!flag_txt) return
         if (flag_txt.value) {
             const flag_submission = flag_txt.value;
-            flag_txt.value = "";
             const isFlag = await flagCheck(flag_submission, chal)
             if (isFlag) {
+                flag_txt.value = "";
                 //stuff
                 console.log("true");
             } else {
@@ -76,12 +76,21 @@ window.onclick = function(event) {
 for (let i = 0; i < hint_btns.length; i++){
     hint_btns[i].addEventListener('click', (e) => {
         e.preventDefault();
+        let this_btn = hint_btns[i]
         // @ts-ignore
         const hint = document.querySelector(e.target.getAttribute("href"));
         if (hint.style.display !== "block") {
+            hints.forEach(h => {
+                h.style.display = "none";
+            })
+            // this_btn.style.background-color = "#00A398"
             hint.style.display = "block";
         } else {
+            hints.forEach(h => {
+                h.style.display = "none";
+            })
             hint.style.display = "none";
+            // this_btn.style.background-color = "#00A398"
         }
     })
 }
