@@ -25,6 +25,17 @@ let flag_btns = document.querySelectorAll("button.flag-btn");
 let hint_btns = document.querySelectorAll("button.hint-button");
 let hints = document.querySelectorAll(".hint");
 
+let wrong = document.querySelector(".wrong-modal");
+let wrong_closer = document.querySelector(".close-wrong");
+let right = document.querySelector(".right-modal");
+let right_closer = document.querySelector(".close-right");
+
+right_closer.onclick = function () {
+    right.style.display = "none";
+}
+wrong_closer.onclick = function () {
+    wrong.style.display = "none";
+}
 for (let i = 0; i < btn.length; i++){
     btn[i].addEventListener('click', (e) => {
         e.preventDefault();
@@ -36,6 +47,7 @@ for (let i = 0; i < btn.length; i++){
         modal.style.display = "block";
     })
 }
+
 for (let i = 0; i < spans.length; i++){
     spans[i].addEventListener('click', () => {
         for (let index in modals) {
@@ -55,12 +67,14 @@ for (const btn of flag_btns){
             const flag_submission = flag_txt.value;
             const isFlag = await flagCheck(flag_submission, chal)
             if (isFlag) {
-                flag_txt.value = "";
-                //stuff
-                console.log("true");
+                right.style.display = "block";
+                for (let index in modals) {
+                    if (typeof modals[index].style !== "undefined") modals[index].style.display = "none";
+                }
+                // btn.parentNode.parentNode.parentNode.firstElementChild.style.backgroundColor = "#6bb57f"
             } else {
+                wrong.style.display = "block";
                 //other stuff
-                console.log("false");
             }
         }  
     })
