@@ -5,6 +5,7 @@ if (params.has('door')){
     var imgLink = "";
     if (door == "eyeron"){
         (async () => {
+            document.getElementById("flagTxt").textContent = "Wait until this text changes so it loads"
             const flag = await fetch("https://doors.noahkaboa.workers.dev/?" + params).then(r => r.text()) //firewall to make sure NOBODY can see my door
             document.getElementById("flagTxt").textContent = flag
             if (flag.slice(0,1) == "f"){
