@@ -11,10 +11,13 @@
     <script>
         function showPW(){
             var x = document.getElementById("pword")
+            var y = document.getElementById("showpass")
             if (x.type === "password") {
                 x.type = "text";
+                y.innerHTML="<i class="fa fa-eye-slash"></i>"
             } else {
                 x.type = "password";
+                y.innerHTML="&#128065;"
             }
         }
         async function checkPword(url, pword){
