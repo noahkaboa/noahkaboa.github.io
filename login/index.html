@@ -23,9 +23,14 @@
             console.log(/[a-z]/.test(pword))
             if (!/\d/.test(pword) || !/[A-Z]/.test(pword) || !/[a-z]/.test(pword)){
                 document.getElementById("errors").innerHTML += "Password must have lowercase letters, uppercase letters, and numbers in it\n"
+                return "Incorrect"
             }
-            if (pword.length < 5 || pword.length > 20){
-                document.getElementById("errors").innerHTML += "Password must be between 5 and 20 characters"
+            if (/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(pword)){
+                document.getElementById("errors").innerHTML += "Password must not have any special characters."
+            }
+            if (pword.length < 10 || pword.length > 20){
+                document.getElementById("errors").innerHTML += "Password must be between 10 and 20 characters"
+                return "Incorrect"
             }
             const flag = await fetch(url).then(r => r.text())
             return flag
@@ -42,8 +47,7 @@
             } else {
                 document.getElementById("errors").innerHTML += "Incorrect username\n"
                 document.getElementById("login-result").innerHTML = "Incorrect"
-            }
-                        
+            }           
         }
     </script>
     <div id="login-form">    
