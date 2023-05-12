@@ -1,3 +1,41 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.wrapper {
+    max-width: 50rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+.section-title {
+    font-size: 2.25rem;
+    text-align: center;
+}
+section {
+    /* background: #05A8AA; */
+    padding-block: 5rem;
+}
+.diagonal {
+    position: relative;
+    
+}
+.diagonal::after {
+    content: '';background-image: 
+    linear-gradient(
+        30deg,
+        #05A8AA,
+        #9A7197,
+        #886176
+    );
+    position: absolute;
+    inset: 0;
+    transform: skewY(-3deg);
+    z-index: -1;
+}
+.section-desc {
+    margin-right: auto;
+    margin-left: 0;
+}
+
 @font-face {
     font-family: 'Sawarabi Gothic';
     src: url("/SawarabiGothic-Regular.ttf");
@@ -6,12 +44,10 @@
 body {
     background-color: #050721;
     font-family: 'Sawarabi Gothic', Verdana, Geneva, Tahoma, sans-serif;
+    /* margin:0; */
+    color: white;
 }
-h1, h2, p{
-    color: aliceblue;
-    text-align: center;
-}
-a {
+.link {
     color: aliceblue;
     font-size: xx-large;
     font-weight: bold;
@@ -31,9 +67,9 @@ button{
     background-color: whitesmoke;
     font-family: 'Sawarabi Gothic';
 }
-/* button:hover{
+button:hover{
     background-color: yellow;
-} */
+}
 #github:hover{
     filter: invert(0.3);
 }
@@ -43,14 +79,11 @@ button{
     top: 8px;
     display: block;
 }
-#resume{
-    font-size: max(30px, 0.75vw);
-}
 header {
     /* position: sticky; */
     top: 0;
 }
-.active {
+#active {
     text-decoration: underline;
     text-decoration-thickness: 20%;
     text-decoration-color: #05A8AA;
@@ -58,17 +91,7 @@ header {
 .not {
     text-decoration: none;
 }
-.github {
-    border: 2px solid aliceblue;
-    background-color: #050721;
-    color:aliceblue;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    float: right;
-    font-family: 'Sawarabi Gothic', Verdana, Geneva, Tahoma, sans-serif;
-}
-.github:hover {
-    background-color: aliceblue;
-    color: #050721;
+
+a {
+    color: aquamarine;
 }
