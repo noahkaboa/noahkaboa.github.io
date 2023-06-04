@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#posts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div#banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ECFEFF;
+    width: 100%;
+    color: #6366F1;
+}
+
+div#banner-content {
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+div#main-content {
+    padding-top: 70px;
+}
+
+#pfp {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 5rem;
+    height: 5rem;
+    margin-left: 200px;
+    float: left;
+}
+
+#uname,
+#counts {
+    margin-left: 20rem;
+}
+
+.post-button,
+.post-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    padding: 10rem;
+}
