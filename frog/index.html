@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Froggy</title>
+</head>
+<body>
+    <style>
+        body {
+            background: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            cursor: none;
+        }
+        .body {
+            width: 200px;
+            height: 200px;
+            background: #1aa331;
+            border-radius: 50% 50% 0 0;
+            position: absolute;
+            top: 50vh;
+            left: 50vw;
+        }
+        .head {
+            position: absolute;
+            background: #1aa331;
+            width: 200px;
+            height: 150px;
+            border-radius: 50%;
+            top: 40vh;
+            left: 50vw;
+
+            display: flex;
+            justify-content: center;
+        }
+        .eye {
+            margin: 0 auto;
+            display: inline-block;
+            background: white;
+            width: 50px;
+            height: 75px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .eye.right {
+            left: 6vw;
+        }
+        .eye-inner {
+            position: relative;
+            background: black;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+
+            top: clamp(0%, var(--eye-y) * 100%, 60%);
+            transition-duration: 0.3s;
+        }
+
+        .eye-inner.left{
+            left: calc(clamp(-10%, var(--eye-x) * 50%, 50%));
+        }
+        .eye-inner.right{
+            left: calc(clamp(-10%, (var(--eye-x) * 50%) - 15%, 50%));
+          
+        }
+        
+        .fly {
+            width: 40px;
+            height: 50px;
+            background: black;
+            border-radius: 50%;
+
+            position: absolute;
+            top: calc(var(--mouse-y) * 1px);
+            left: calc(var(--mouse-x) * 1px);
+
+            z-index: 5;
+        }       
+        .fly::before, .fly::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            aspect-ratio: 1;            
+            background: rgb(126, 125, 125);
+            border-radius: 40%;
+            transform: rotate(-60deg) skewX(-30deg) scale(1,.866);
+        } 
+        .fly::before {
+            top: 40%;
+            left: -10%;
+            /* transform: rotate(0deg); */
+        }
+        .fly::after {
+            top: 40%;
+            left: 50%;
+        }
+
+        .mouth {
+            position: absolute;
+            top: 50%;
+            background: #094e14;
+            width: 60px;
+            height: 10px;
+            border-radius: 50%;
+            z-index: 4;
+        }
+        .tummy {
+            background: #094e14;
+            width: 100px;
+            height: 130px;
+            position: absolute;
+            top: 35%;
+            left: 25%;
+            border-radius: 50% 50% 0 0;
+        }
+
+        </style>
+    <div class="fly"></div>
+    </div>
+    <div class="head">
+        <div class="eye left">
+            <div class="eye-inner left"></div>
+        </div>
+        <div class="eye right">
+            <div class="eye-inner right"></div>
+        </div>
+        <div class="mouth">
+            <div id="tongue"></div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="tummy"></div>
+    </div>
+    <div class="leg left"></div>
+    <div class="leg right"></div>
+    <script defer>
+        
+        function getOffset(el) {
+            const rect = el.getBoundingClientRect();
+            return {
+                left: rect.left + window.scrollX,
+                top: rect.top + window.scrollY
+            };
+        }
+        //Manage eyes
+        const root = document.documentElement;
+        //get location of mouth
+        const mouth = document.querySelector('.mouth');
+        const fly = document.querySelector('.fly');
+        const mouthOffset = getOffset(mouth);
+        root.style.setProperty('--mouth-x', mouthOffset.left);
+        root.style.setProperty('--mouth-y', mouthOffset.top);
+        document.addEventListener('mousemove', evt => {
+            let x = evt.clientX;
+            let y = evt.clientY;
+            
+
+            root.style.setProperty('--mouse-x', x);
+            root.style.setProperty('--mouse-y', y);
+            root.style.setProperty('--eye-x', x/innerWidth);
+            root.style.setProperty('--eye-y', y/innerHeight);
+
+            console.log(innerWidth)
+      
+        }
+      );
+
+      function tongue(mouth, fly, color, thickness) {
+        var off1 = getOffset(mouth);
+        var off2 = getOffset(fly);
+        var x1 = off1.left + mouth.offsetWidth;
+        var y1 = off1.top + mouth.offsetHeight;
+
+        var x2 = off2.left + fly.offsetWidth;
+        var y2 = off2.top;
+
+        var length = Math.sqrt(((x2-x1) * (x2-x1)) + ((y2-y1) * (y2-y1)));
+        var cx = ((x1 + x2) / 2) - (length / 2);
+        var cy = ((y1 + y2) / 2) - (thickness / 2);
+
+        var angle = Math.atan2((y1-y2),(x1-x2))*(180/Math.PI);
+        t = document.getElementById('tongue');
+        t.style.setProperty('transition-duration', "1s");
+        t.style.setProperty('padding', "0px");
+        t.style.setProperty('height', thickness + "px");
+        t.style.setProperty('background-color', color);
+        t.style.setProperty('line-height', "1px");
+        t.style.setProperty('position', "absolute");
+        t.style.setProperty('left', cx + "px");
+        t.style.setProperty('top', cy + "px");
+        t.style.setProperty('width', length + "px");
+        t.style.setProperty('-moz-transform', "rotate(" + angle + "deg)");
+        t.style.setProperty('-webkit-transform', "rotate(" + angle + "deg)");
+        t.style.setProperty('-o-transform', "rotate(" + angle + "deg)");
+        t.style.setProperty('-ms-transform', "rotate(" + angle + "deg)");
+        t.style.setProperty('transform', "rotate(" + angle + "deg)");
+    }
+    document.addEventListener('mousedown', evt => {
+        tongue(mouth, fly, 'red', 5);
+    });
+    document.addEventListener('mouseup', evt => {
+        t = document.getElementById('tongue');
+        
+        t.style.setProperty('transition-duration', null);
+        t.style.setProperty('padding', null);
+        t.style.setProperty('height', null);
+        t.style.setProperty('background-color', null);
+        t.style.setProperty('line-height', null);
+        t.style.setProperty('position', null);
+        t.style.setProperty('left', null);
+        t.style.setProperty('top', null);
+        t.style.setProperty('width', null);
+        t.style.setProperty('-moz-transform', null);
+        t.style.setProperty('-webkit-transform', null);
+        t.style.setProperty('-o-transform', null);
+        t.style.setProperty('-ms-transform', null);
+        t.style.setProperty('transform', null);
+    });
+        
+    </script>
+</body>
+</html>
