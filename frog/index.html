@@ -56,7 +56,7 @@
             border-radius: 50%;
 
             top: clamp(0%, var(--eye-y) * 100%, 60%);
-            transition-duration: 0.3s;
+            transition-duration: 0.2s;
         }
 
         .eye-inner.left{
@@ -168,57 +168,57 @@
         }
       );
 
-      function tongue(mouth, fly, color, thickness) {
-        var off1 = getOffset(mouth);
-        var off2 = getOffset(fly);
-        var x1 = off1.left + mouth.offsetWidth;
-        var y1 = off1.top + mouth.offsetHeight;
+    //   function tongue(mouth, fly, color, thickness) {
+    //     var off1 = getOffset(mouth);
+    //     var off2 = getOffset(fly);
+    //     var x1 = off1.left + mouth.offsetWidth;
+    //     var y1 = off1.top + mouth.offsetHeight;
 
-        var x2 = off2.left + fly.offsetWidth;
-        var y2 = off2.top;
+    //     var x2 = off2.left + fly.offsetWidth;
+    //     var y2 = off2.top;
 
-        var length = Math.sqrt(((x2-x1) * (x2-x1)) + ((y2-y1) * (y2-y1)));
-        var cx = ((x1 + x2) / 2) - (length / 2);
-        var cy = ((y1 + y2) / 2) - (thickness / 2);
+    //     var length = Math.sqrt(((x2-x1) * (x2-x1)) + ((y2-y1) * (y2-y1)));
+    //     var cx = ((x1 + x2) / 2) - (length / 2);
+    //     var cy = ((y1 + y2) / 2) - (thickness / 2);
 
-        var angle = Math.atan2((y1-y2),(x1-x2))*(180/Math.PI);
-        t = document.getElementById('tongue');
-        t.style.setProperty('transition-duration', "1s");
-        t.style.setProperty('padding', "0px");
-        t.style.setProperty('height', thickness + "px");
-        t.style.setProperty('background-color', color);
-        t.style.setProperty('line-height', "1px");
-        t.style.setProperty('position', "absolute");
-        t.style.setProperty('left', cx + "px");
-        t.style.setProperty('top', cy + "px");
-        t.style.setProperty('width', length + "px");
-        t.style.setProperty('-moz-transform', "rotate(" + angle + "deg)");
-        t.style.setProperty('-webkit-transform', "rotate(" + angle + "deg)");
-        t.style.setProperty('-o-transform', "rotate(" + angle + "deg)");
-        t.style.setProperty('-ms-transform', "rotate(" + angle + "deg)");
-        t.style.setProperty('transform', "rotate(" + angle + "deg)");
-    }
-    document.addEventListener('mousedown', evt => {
-        tongue(mouth, fly, 'red', 5);
-    });
-    document.addEventListener('mouseup', evt => {
-        t = document.getElementById('tongue');
+    //     var angle = Math.atan2((y1-y2),(x1-x2))*(180/Math.PI);
+    //     t = document.getElementById('tongue');
+    //     t.style.setProperty('transition-duration', "1s");
+    //     t.style.setProperty('padding', "0px");
+    //     t.style.setProperty('height', thickness + "px");
+    //     t.style.setProperty('background-color', color);
+    //     t.style.setProperty('line-height', "1px");
+    //     t.style.setProperty('position', "absolute");
+    //     t.style.setProperty('left', cx + "px");
+    //     t.style.setProperty('top', cy + "px");
+    //     t.style.setProperty('width', length + "px");
+    //     t.style.setProperty('-moz-transform', "rotate(" + angle + "deg)");
+    //     t.style.setProperty('-webkit-transform', "rotate(" + angle + "deg)");
+    //     t.style.setProperty('-o-transform', "rotate(" + angle + "deg)");
+    //     t.style.setProperty('-ms-transform', "rotate(" + angle + "deg)");
+    //     t.style.setProperty('transform', "rotate(" + angle + "deg)");
+    // }
+    // document.addEventListener('mousedown', evt => {
+    //     tongue(mouth, fly, 'red', 5);
+    // });
+    // document.addEventListener('mouseup', evt => {
+    //     t = document.getElementById('tongue');
         
-        t.style.setProperty('transition-duration', null);
-        t.style.setProperty('padding', null);
-        t.style.setProperty('height', null);
-        t.style.setProperty('background-color', null);
-        t.style.setProperty('line-height', null);
-        t.style.setProperty('position', null);
-        t.style.setProperty('left', null);
-        t.style.setProperty('top', null);
-        t.style.setProperty('width', null);
-        t.style.setProperty('-moz-transform', null);
-        t.style.setProperty('-webkit-transform', null);
-        t.style.setProperty('-o-transform', null);
-        t.style.setProperty('-ms-transform', null);
-        t.style.setProperty('transform', null);
-    });
+    //     t.style.setProperty('transition-duration', null);
+    //     t.style.setProperty('padding', null);
+    //     t.style.setProperty('height', null);
+    //     t.style.setProperty('background-color', null);
+    //     t.style.setProperty('line-height', null);
+    //     t.style.setProperty('position', null);
+    //     t.style.setProperty('left', null);
+    //     t.style.setProperty('top', null);
+    //     t.style.setProperty('width', null);
+    //     t.style.setProperty('-moz-transform', null);
+    //     t.style.setProperty('-webkit-transform', null);
+    //     t.style.setProperty('-o-transform', null);
+    //     t.style.setProperty('-ms-transform', null);
+    //     t.style.setProperty('transform', null);
+    // });
         
     </script>
 </body>
