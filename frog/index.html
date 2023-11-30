@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Froggy</title>
 </head>
-<body>
+<body id="realBody">
     <style>
         body {
             background: skyblue;
@@ -101,9 +101,11 @@
         .mouth {
             position: absolute;
             top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background: #094e14;
             width: 60px;
-            height: 10px;
+            height: var(--mouth-height);
             border-radius: 50%;
             z-index: 4;
         }
@@ -119,7 +121,7 @@
 
         </style>
     <div class="fly"></div>
-    </div>
+    
     <div class="head">
         <div class="eye left">
             <div class="eye-inner left"></div>
@@ -153,6 +155,7 @@
         const mouthOffset = getOffset(mouth);
         root.style.setProperty('--mouth-x', mouthOffset.left);
         root.style.setProperty('--mouth-y', mouthOffset.top);
+        body = document.getElementById('realBody');
         document.addEventListener('mousemove', evt => {
             let x = evt.clientX;
             let y = evt.clientY;
@@ -163,8 +166,14 @@
             root.style.setProperty('--eye-x', x/innerWidth);
             root.style.setProperty('--eye-y', y/innerHeight);
 
-            console.log(innerWidth)
-      
+            const distance = Math.sqrt(
+                (x - mouthOffset.left) ** 2 + (y - mouthOffset.top) ** 2
+            );
+            if (distance < 60) {
+                root.style.setProperty('--mouth-height', '40px');
+            } else {
+                root.style.setProperty('--mouth-height', '10px');
+            }
         }
       );
 
